@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chart</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/chart.css' %}">
+</head>
+<body>
+	<div class="container">
+		<header></header>
+		<div class="leftbar"></div>
+		<div id='tvchart'></div>
+	</div>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="{% static 'main/javascript/backtest_chart.js' %}"></script>
+  </body>
+</html>

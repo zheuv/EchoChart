@@ -1,0 +1,67 @@
+body, html {
+    background-color: #ffffff; /* Light gray background */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    color: #333; /* Dark gray text color */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    height: 50px;
+    border-bottom: 1px solid #dee2e6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 25px; /* Ensure space for the logo */
+    z-index: 1500;
+}
+.leftbar {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    position: fixed;
+    border-right: 1px solid #dee2e6;
+    top: 50px;
+    bottom: 0px;
+    left: 0;
+    z-index: 1000;
+}
+.rightbar {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+    width: 50px;
+    position: fixed;
+    border-left: 1px solid #dee2e6;
+    top: 50px;
+    bottom: 50px;
+    right: 0;
+    z-index: 1000;
+}
+footer {
+    height: 50px;
+    border-top: 1px solid #dee2e6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#tvchart {
+	top: 50px;
+	left: 50px;
+	bottom: 50px;
+	right: 50px;
+        position: absolute;
+        width: 95vw;
+        height: 89vh;
+      }

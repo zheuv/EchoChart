@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/Home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">EC</h1>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
+                <div id="suggestions" class="suggestions"></div>
+                <button type="submit" class="search-button">🔍</button>
+            </div>
+        </header>
+        <div class="sidebar">
+            <img src="{% static 'main/images/home.png' %}" alt="home-icon" class="icon" id="home">
+            <img src="{% static 'main/images/user.png' %}" alt="user-icon" class="icon" id="user">
+            <img src="{% static 'main/images/favourites.png' %}" alt="favourite-icon" class="icon" id="favourites">
+            <img src="{% static 'main/images/trades.png' %}" alt="trade-icon" class="icon" id="trades">
+            <img src="{% static 'main/images/logout.png' %}" alt="logout-icon" class="icon" id="logout">
+        </div>
+        <div class="main">
+            <div class="category-bar">
+                <button class="tab active" onclick="openCategory(event, 'Indices')">Indices</button>
+                <button class="tab" onclick="openCategory(event, 'Stocks')">Stocks</button>
+                <button class="tab" onclick="openCategory(event, 'Forex')">Forex</button>
+                <button class="tab" onclick="openCategory(event, 'Futures')">Futures</button>
+                <button class="tab" onclick="openCategory(event, 'Bonds')">Bonds</button>
+            </div>
+            <div class="content">
+                <div id="Indices" class="category-content">
+                    <table id="Indices-options"></table>
+                </div>
+                <div id="Stocks" class="category-content" style="display:none">
+                    <table id="Stocks-options"></table>
+                </div>
+                <div id="Forex" class="category-content" style="display:none">
+                    <table id="Forex-options"></table>
+                </div>
+                <div id="Futures" class="category-content" style="display:none">
+                    <table id="Futures-options"></table>
+                </div>
+                <div id="Bonds" class="category-content" style="display:none">
+                    <table id="Bonds-options"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="backtestModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="backtestForm">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+
+                <label for="timeframe">Timeframe:</label>
+                <select id="timeframe" name="timeframe" required>
+                    <option value="1m">1 minute</option>
+                    <option value="5m">5 minutes</option>
+                    <option value="15m">15 minutes</option>
+                    <option value="30m">30 minutes</option>
+                    <option value="1h">1 hour</option>
+                    <option value="4h">4 hours</option>
+                    <option value="1d">1 day</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'main/javascript/openCategory.js' %}"></script>
+    <script src="{% static 'main/javascript/fetchit.js' %}"></script>
+    <script src="{% static 'main/javascript/homee.js' %}"></script>
+</body>
+</html>
+

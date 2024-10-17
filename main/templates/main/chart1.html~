@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      #tvchart {
+        position: absolute;
+        width: 95vw;
+        height: 95vh;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrendLines</title>
+    {% load static %}
+  </head>
+  <body>
+    <div id="tvchart"></div>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="{% static 'main/javascript/chartit2.js' %}"></script>
+  </body>
+</html>

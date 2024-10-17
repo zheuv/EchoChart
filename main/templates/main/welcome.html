@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/body.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/Welcome.css' %}">
+    <!-- Link to Google Fonts for modern font styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-content">
+            <h1>Echochart</h1>
+            <h2>Welcome to EchoChart</h2>
+            <div class="choices">
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Sign Up</a>
+                <a href="{% url 'guest' %}">Continue as Guest</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <canvas id="volatilityChart"></canvas>
+        </div>
+    </div>
+    <script>
+        // JavaScript to initialize the chart without labels and decorations
+        var ctx = document.getElementById('volatilityChart').getContext('2d');
+        var volatilityChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Example labels
+                datasets: [{
+                    label: 'Volatility',
+                    data: [12, 5, 30, 26, 50, 31,55, 50, 66, 55, 77, 90], // Example data
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: false // Hide X-axis
+                    },
+                    y: {
+                        display: false // Hide Y-axis
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Hide legend
+                    },
+                    tooltip: {
+                        enabled: false // Disable tooltips
+                    }
+                },
+                elements: {
+                    point: {
+                        radius: 0 // Hide data points
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

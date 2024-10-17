@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    gap: 20px; /* Add gap between left and right content */
+    padding: 20px;
+}
+
+.left-content {
+    text-align: center;
+    flex: 1;
+}
+
+.right-content {
+    align-items: bottom;
+	flex: 1;
+}
+
+.left-content h1 {
+	text-align: left;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 85px;
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    color: #666;
+}
+
+.choices {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.choices a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff4d4d; /* Red button background */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choices a:hover {
+    background-color: #e63939; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhance shadow on hover */
+}
+
+canvas {
+	width: 100%;
+    height: 400px; /* Set a fixed height for the chart */
+}

@@ -1,0 +1,179 @@
+body, html {
+    background-color: #ffffff; /* Light gray background */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    color: #333; /* Dark gray text color */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    height: 50px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 25px; /* Ensure space for the logo */
+    z-index: 1500;
+}
+h1.logo {
+    margin: 0px;
+    font-size: 30px;
+     /* Remove default margin */
+}
+
+
+#timeFrame {
+	top: 0px;
+	margin-right: 40px;
+	margin-left: 40px;
+	padding : 10px;
+	border-right: 2px solid red;
+	border-left: 2px solid red;
+}
+#timeFrame:hover {
+ /* Scale up the icon on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0.2);	/* Enhance shadow on hover */
+	background-color: e6e6e6;
+	cursor: pointer;
+}
+/* Style the timeframe suggestions */
+.timeFrame-suggestions {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    top: 55px; /* Adjust this based on the position of your timeFrame element */
+    left: 55px;
+    z-index: 1000;
+    width: auto;
+    padding: 5px;
+}
+
+.timeFrame-option {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.timeFrame-option:hover {
+    background-color: #f0f0f0;
+}
+
+.search-container {
+	width:700px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 650px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #f0f0f0;
+}
+.suggestions {
+    max-height: 175px;
+    overflow-y: auto;
+    background-color: #fff;
+    position: absolute;
+    width: 670px;
+    top: 100%;
+    margin-right: 35px;
+
+}
+
+.suggestion-item {
+    padding: 7px;
+    cursor: pointer;
+    border: 0.5px solid black;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.leftbar {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    position: fixed;
+    border-right: 1px solid black;
+    top: 50px;
+    bottom: 0px;
+    left: 0;
+    z-index: 1000;
+}
+.tool {
+    padding: 2px;
+    width: 38px;  /* Set the width */
+    height: 38px; /* Set the height */
+	border-radius: 5px;
+    margin: 10px; /* Add some margin */
+    transition: transform 0.3s; /* Add a transition effect */
+}
+.tool:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Enhance shadow on hover */
+}
+#crosshair {
+	background-color: #e6e6e6;
+}
+.rightbar {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+    width: 50px;
+    position: fixed;
+    border-left: 1px solid #dee2e6;
+    top: 50px;
+    bottom: 50px;
+    right: 0;
+    z-index: 1000;
+}
+footer {
+    height: 50px;
+    border-top: 1px solid #dee2e6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#tvchart {
+	top: 50px;
+	left: 50px;
+	bottom: 50px;
+	right: 50px;
+        position: absolute;
+        width: 95vw;
+        height: 89vh;
+      }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chart</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/chart.css' %}">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1 class="logo">EchoChart</h1>
+			<div class="timeFrames">
+				<h3 id="timeFrame"></h3>
+				<div id="timeFrameSuggestions" class="timeFrame-suggestions">
+					<!-- List of timeframes, can be dynamically populated -->
+					<div class="timeFrame-option">1m</div>
+					<div class="timeFrame-option">5m</div>
+					<div class="timeFrame-option">15m</div>
+					<div class="timeFrame-option">1h</div>
+					<div class="timeFrame-option">4h</div>
+					<div class="timeFrame-option">1d</div>
+				</div>
+			</div>
+			<div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
+                <div id="suggestions" class="suggestions"></div>
+                <button type="submit" class="search-button">🔍</button>
+            </div>
+		</header>
+		<div class="leftbar">
+			<img src="{% static 'main/images/cursor.png' %}" alt="crosshair-icon" class="tool" id="crosshair">
+			<img src="{% static 'main/images/diagonal.png' %}" alt="line-icon" class="tool" id="line">
+		</div>
+		<div id='tvchart'></div>
+	</div>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="{% static 'main/javascript/backtest_chart1.js' %}"></script>
+	<script src="{% static 'main/javascript/dynamicScript.js' %}"></script>	
+  </body>
+</html>

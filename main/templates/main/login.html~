@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/body.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/Login.css' %}">
+</head>
+<body>
+	<div class="container">
+		<h1>EchoChart</h1>
+		<form method="POST">
+			{% csrf_token %}
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
+			<button type="submit">Login</button>
+		</form>
+		<a href="#">Forgot your password?</a>
+	</div>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+

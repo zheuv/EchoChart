@@ -1,0 +1,182 @@
+/* Container settings */
+body, html {
+    background-color: #ffffff; /* Light gray background */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    color: #333; /* Dark gray text color */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    height: 100px;
+    border-bottom: 1px solid #dee2e6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 25px; /* Ensure space for the logo */
+}
+
+.search-container {
+	width:700px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 650px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #f0f0f0;
+}
+.suggestions {
+    max-height: 175px;
+    overflow-y: auto;
+    background-color: #fff;
+    position: absolute;
+    width: 670px;
+    top: 100%;
+    margin-right: 35px;
+
+}
+
+.suggestion-item {
+    padding: 7px;
+    cursor: pointer;
+    border: 0.5px solid black;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+h1.logo {
+    margin: 0px;
+    font-size: 30px;
+     /* Remove default margin */
+}
+
+.sidebar {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    align-items: center;
+    width: 75px;
+    position: fixed;
+    border-right: 1px solid #dee2e6;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+.icon {
+    padding: 10px;
+    width: 25px;  /* Set the width */
+    height: 25px; /* Set the height */
+    margin: 10px; /* Add some margin */
+    transition: transform 0.3s; /* Add a transition effect */
+}
+.icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhance shadow on hover */
+}
+#home {
+    background-color: #e6e6e6;
+    border-radius: 5px;
+}
+#logout {
+    height: 20px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.category-bar {
+    justify-content: space-around;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #dee2e6;
+    position: fixed;
+    top: 100px;
+    left: 77px;
+    right: 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab:hover, .tab.active {
+    background-color: #e6e6e6;
+}
+.content {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 150px; /* Adjust based on header and category bar height */
+    margin-left: 75px;
+    background-color: #ffffff;
+}
+.category-content {
+    display: none;
+}
+.category-content.active {
+    display: block;
+}
+table {
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    gap: 20px;
+    background-color: green;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+}
+.launch {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
