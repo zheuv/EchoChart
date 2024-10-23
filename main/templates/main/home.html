@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="logo">EC</h1>
+            <h1 class="logo">EchoChart</h1>
             <div class="search-container">
                 <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
                 <div id="suggestions" class="suggestions"></div>
@@ -20,8 +20,9 @@
         <div class="sidebar">
             <img src="{% static 'main/images/home.png' %}" alt="home-icon" class="icon" id="home">
             <img src="{% static 'main/images/user.png' %}" alt="user-icon" class="icon" id="user">
-            <img src="{% static 'main/images/favourites.png' %}" alt="favourite-icon" class="icon" id="favourites">
+            <img src="{% static 'main/images/favourites.png' %}" alt="favourite-icon" onclick="openCategory(event, 'favorites')" class="icon" id="favourites">
             <img src="{% static 'main/images/trades.png' %}" alt="trade-icon" class="icon" id="trades">
+			<img src="{% static 'main/images/info.png' %}" alt="info-icon" class="icon" id="info">
             <img src="{% static 'main/images/logout.png' %}" alt="logout-icon" class="icon" id="logout">
         </div>
         <div class="main">
@@ -48,37 +49,51 @@
                 <div id="Bonds" class="category-content" style="display:none">
                     <table id="Bonds-options"></table>
                 </div>
+				<div id="favorites" class="category-content" style="display:none">
+                    <table id="favorites-options"></table>
+                </div>
             </div>
         </div>
     </div>
     <div id="backtestModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="backtestForm">
-                <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate" required>
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<form id="backtestForm">
+				<h2>Backtest Parameters</h2>
+            
+				<div class="form-group">
+					<label for="startDate">Start Date:</label>
+					<input type="date" id="startDate" name="startDate" required>
+				</div>
 
-                <label for="endDate">End Date:</label>
-                <input type="date" id="endDate" name="endDate" required>
+				<div class="form-group">
+					<label for="endDate">End Date:</label>
+					<input type="date" id="endDate" name="endDate" required>
+				</div>
 
-                <label for="timeframe">Timeframe:</label>
-                <select id="timeframe" name="timeframe" required>
-                    <option value="1m">1 minute</option>
-                    <option value="5m">5 minutes</option>
-                    <option value="15m">15 minutes</option>
-                    <option value="30m">30 minutes</option>
-                    <option value="1h">1 hour</option>
-                    <option value="4h">4 hours</option>
-                    <option value="1d">1 day</option>
-                </select>
+				<div class="form-group">
+					<label for="timeframe">Timeframe:</label>
+					<select id="timeframe" name="timeframe" required>
+						<option value="1m">1 minute</option>
+						<option value="5m">5 minutes</option>
+						<option value="15m">15 minutes</option>
+						<option value="30m">30 minutes</option>
+						<option value="1h">1 hour</option>
+						<option value="4h">4 hours</option>
+						<option value="1d">1 day</option>
+					</select>
+				</div>
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+				<button type="submit" class="submit-btn">Submit</button>
+			</form>
+		</div>
+	</div>
+
     <script src="{% static 'main/javascript/openCategory.js' %}"></script>
-    <script src="{% static 'main/javascript/fetchiit.js' %}"></script>
-    <script src="{% static 'main/javascript/homee.js' %}"></script>
+    <script src="{% static 'main/javascript/fetchit.js' %}"></script>
+    <script src="{% static 'main/javascript/home.js' %}"></script>
+	<script src="{% static 'main/javascript/favorites.js' %}"></script>
+	<script src="{% static 'main/javascript/info.js' %}"></script>
 </body>
 </html>
 
