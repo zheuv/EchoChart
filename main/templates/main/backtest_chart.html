@@ -31,12 +31,49 @@
 		</header>
 		<div class="leftbar">
 			<img src="{% static 'main/images/cursor.png' %}" alt="crosshair-icon" class="tool" id="crosshair">
-			<img src="{% static 'main/images/diagonal.png' %}" alt="line-icon" class="tool" id="line">
+			<img src="{% static 'main/images/diagonal.png' %}" alt="diagonal-icon" class="tool" id="diagonal">
+			<img src="{% static 'main/images/line.png' %}" alt="line-icon" class="tool" id="line">
+			<img src="{% static 'main/images/sma.png' %}" alt="sma-icon" class="tool" id="sma">
+			<img src="{% static 'main/images/ema.png' %}" alt="ema-icon" class="tool" id="ema">
 		</div>
 		<div id='tvchart'></div>
+		    <div id="backtestModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<form id="backtestForm">
+				<h2>Backtest Parameters</h2>
+            
+				<div class="form-group">
+					<label for="startDate">Start Date:</label>
+					<input type="date" id="startDate" name="startDate" required>
+				</div>
+
+				<div class="form-group">
+					<label for="endDate">End Date:</label>
+					<input type="date" id="endDate" name="endDate" required>
+				</div>
+
+				<div class="form-group">
+					<label for="timeframe">Timeframe:</label>
+					<select id="timeframe" name="timeframe" required>
+						<option value="1m">1 minute</option>
+						<option value="5m">5 minutes</option>
+						<option value="15m">15 minutes</option>
+						<option value="30m">30 minutes</option>
+						<option value="1h">1 hour</option>
+						<option value="4h">4 hours</option>
+						<option value="1d">1 day</option>
+					</select>
+				</div>
+
+				<button type="submit" class="submit-btn">Submit</button>
+			</form>
+		</div>
+	</div>
 	</div>
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="{% static 'main/javascript/backtest_chart1.js' %}"></script>
+    <script src="{% static 'main/javascript/backtest_chart.js' %}"></script>
+	<script src="{% static 'main/javascript/fetchit.js' %}"></script>
 	<script src="{% static 'main/javascript/dynamicScript.js' %}"></script>	
   </body>
 </html>
