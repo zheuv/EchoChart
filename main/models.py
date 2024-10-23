@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,11 +30,13 @@ class UserPersonal(models.Model):
         return self.username
 
 class UserPreferences(models.Model):
-    user = models.OneToOneField(UserPersonal, on_delete=models.CASCADE, primary_key=True)
-    design = models.JSONField()
-    fav_pairs = models.JSONField()
-    trades = models.JSONField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    design = models.JSONField(default=dict)  # Provide a default value
+    fav_pairs = models.JSONField(default=list)  # Add default if needed
+    trades = models.JSONField(default=list)  # Add default if needed
 
     def __str__(self):
         return self.user.username
+
+
 
